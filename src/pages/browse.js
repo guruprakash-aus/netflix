@@ -1,20 +1,22 @@
-import React from 'react'
-import { useContent } from '../hooks'
+import React from "react";
+import { BrowseContainer } from "../containers/browse";
+import { useContent } from "../hooks";
+import selectionMap from "../utils/selection-map";
 
 function Browse() {
-    
-    // We need the series and the films
-    const { series } = useContent('series');
-    console.log(series)
-    // We need slides
+  // We need the series and the films
+  const { series } = useContent("series");
+  //console.log(series);
+  const { films } = useContent("films");
+  //console.log(films);
 
-    // Pass it to the browse container
+  // We need slides
+  // Combine both series and films along with Genre(Map)
+  const slides = selectionMap({ series, films });
+  // console.log(slides);
+  // Pass it to the browse container
 
-    return (
-        <div>
-            <h1> Hello from Browse!!</h1>
-        </div>
-    )
+  return <BrowseContainer slides={slides} />;
 }
 
-export default Browse
+export default Browse;
