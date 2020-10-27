@@ -8,7 +8,7 @@ function Browse() {
   const { series } = useContent("series");
   //console.log(series);
   const { films } = useContent("films");
-  //console.log(films);
+  console.log(films);
 
   // We need slides
   // Combine both series and films along with Genre(Map)
